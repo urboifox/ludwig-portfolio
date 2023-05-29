@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap");
+
+@font-face {
+  font-family: "brandonLight";
+  src: url(./assets/fonts/brandon-grotesque-light.otf) format(opentype);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+.navLink {
+  @apply text-white uppercase text-[16px] font-semibold mr-14 font-montserrat;
+}
+
+.paddingY {
+  @apply py-5 md:py-14;
+}
+
+.paddingX {
+  @apply px-5;
+}
+
+.gridme {
+  @apply grid gap-10 md:gap-20;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
