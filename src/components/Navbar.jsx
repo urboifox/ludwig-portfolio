@@ -3,14 +3,19 @@ function Navbar({ data }) {
   return (
     <nav className="flex container mx-auto max-w-[1000px] items-start justify-between paddingY">
       <div>
-        <h1 className="text-white font-montserrat text-[46px] uppercase font-bold">
+        <h1 className="text-white font-montserrat tracking-tighter text-[46px] uppercase font-bold">
           {data.heading}
         </h1>
         <p className="text-secondary font-brandonLight text-[25px] font-light">
           {data.subHeading}
         </p>
         <div className="pt-10">
-          <a className="navLink" href="">
+          <a
+            className="navLink cursor-pointer"
+            onClick={() => {
+              window.scrollTo(0, document.getElementById("about").offsetTop);
+            }}
+          >
             About
           </a>
           <a

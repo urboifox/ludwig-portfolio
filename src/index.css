@@ -13,7 +13,10 @@ html {
   scroll-behavior: smooth;
 }
 .navLink {
-  @apply text-white uppercase text-[16px] font-semibold mr-14 font-montserrat;
+  @apply relative text-white uppercase text-[16px] hover:after:w-full font-medium tracking-wider mr-14 font-montserrat;
+}
+.navLink::after {
+  @apply absolute content-[""] -bottom-2 left-0 w-0 h-[2px] bg-white transition-all duration-200;
 }
 
 .paddingY {
@@ -27,4 +30,12 @@ html {
 .gridme {
   @apply grid gap-10 md:gap-20;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project:hover img {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }

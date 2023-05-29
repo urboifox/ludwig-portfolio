@@ -6,10 +6,14 @@ function Projects({ data }) {
         return (
           <div
             key={e.id}
-            className="relative cursor-pointer flex items-center justify-center"
+            className="overflow-hidden project relative cursor-pointer flex items-center justify-center"
           >
-            <img className="object-contain" src={e.thumbnail} alt={e.name} />
-            <div className="absolute top-0 left-0 flex flex-col opacity-0 hover:opacity-100 transition-all duration-300 items-center justify-center bg-[rgba(0,0,0,0.5)] w-full h-full">
+            <img
+              className="transition duration-300 object-contain"
+              src={e.thumbnail}
+              alt={e.name}
+            />
+            <div className="absolute top-0 left-0 flex flex-col opacity-0 hover:opacity-100 transition-all duration-300 items-center justify-center bg-[rgba(0,0,0,0.8)] w-full h-full">
               <h2 className="text-[46px] font-montserrat font-bold uppercase text-white">
                 {e.name}
               </h2>

@@ -3,7 +3,10 @@ import { nanoid } from "nanoid";
 
 function About({ data }) {
   return (
-    <section className="paddingY flex items-end justify-between max-w-[1000px] mx-auto">
+    <section
+      id="about"
+      className="paddingY flex items-end justify-between max-w-[1000px] mx-auto"
+    >
       <div className="max-w-[600px]">
         {data.paragraphs.map((e) => {
           return (
