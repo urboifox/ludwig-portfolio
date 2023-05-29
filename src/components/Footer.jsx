@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="max-w-[1000px] mx-auto paddingY font-light text-[16px]">
@@ -5,9 +6,12 @@ function Footer() {
         <small className="font-brandonLight text-secondary">
           &copy; 2023 Ludwig Reuter
         </small>
-        <a className="text-secondary font-brandonLight text-[16px] cursor-pointer">
+        <Link
+          to="/imprint"
+          className="text-secondary font-brandonLight text-[16px] cursor-pointer"
+        >
           IMPRINT
-        </a>
+        </Link>
       </div>
     </footer>
   );

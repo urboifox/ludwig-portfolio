@@ -13,14 +13,14 @@ html {
   scroll-behavior: smooth;
 }
 .navLink {
-  @apply relative text-white uppercase text-[16px] hover:after:w-full font-medium tracking-wider mr-14 font-montserrat;
+  @apply relative text-white transition-all duration-200 hover:text-secondary uppercase text-[12px] xs:text-[16px] hover:after:w-full font-medium tracking-wider font-montserrat;
 }
 .navLink::after {
-  @apply absolute content-[""] -bottom-2 left-0 w-0 h-[2px] bg-white transition-all duration-200;
+  @apply absolute content-[""] -bottom-2 left-0 w-0 h-[2px] bg-white hover:bg-secondary transition-all duration-200;
 }
 
 .paddingY {
-  @apply py-5 md:py-14;
+  @apply py-8 xs:py-14;
 }
 
 .paddingX {
@@ -38,4 +38,51 @@ html {
   -moz-transform: scale(1.05);
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
+}
+
+.xme::before,
+.xme::after {
+  @apply content-[""] absolute transition-all duration-100 z-30 top-[50%] left-0 w-full h-[2px] bg-white;
+}
+
+.xme:hover::after,
+.xme:hover::before {
+  @apply bg-primary;
+}
+.xme::before {
+  @apply rotate-45;
+}
+.xme::after {
+  @apply -rotate-45;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary;
+}
+
+p.within {
+  margin: 0 !important;
+}
+.break {
+  margin-bottom: 80px;
+}
+p.title {
+  margin-bottom: 30px;
+}
+.imprintP {
+  margin-bottom: 20px;
+}
+
+::selection {
+  @apply bg-primary text-white;
 }

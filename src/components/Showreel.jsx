@@ -1,11 +1,57 @@
-function Showreel() {
+/* eslint-disable react/prop-types */
+import { useEffect, useRef, useState } from "react";
+import { Video } from "./";
+
+function Showreel({ data }) {
+  const [video, setVideo] = useState(null);
+
+  const toggleVideo = (link) => {
+    if (video === null) {
+      setVideo(link);
+    } else {
+      setVideo(null);
+    }
+  };
+
+  const videoHolder = useRef();
+  useEffect(() => {
+    if (video) {
+      setTimeout(() => {
+        videoHolder.current.style.opacity = "1";
+      }, 500);
+    }
+  }, [video]);
+
   return (
     <section className="flex flex-col items-center justify-center mx-auto">
-      <div className="flex flex-col items-center justify-center gap-5 paddingY max-w-[1000px] mx-auto border-y-primary border-y-[1px] w-full">
+      {video ? (
+        <div>
+          <div className="cursor-default w-full h-[100vh] bg-background z-20 flex items-center justify-center fixed left-0 top-0">
+            <div
+              className="w-[50px] cursor-pointer xme aspect-square absolute top-10 right-[10px] md:right-10"
+              onClick={() => {
+                toggleVideo(null);
+              }}
+            ></div>
+            <div
+              className={`transition-all duration-1000 opacity-0 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
+              ref={videoHolder}
+            >
+              <Video link={video} embeded={data.embeded} />
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      <div className="flex flex-col items-center justify-center gap-2 xs:gap-5 paddingY max-w-[1000px] mx-auto border-y-primary border-y-[1px] w-full">
         <h2 className="text-[22px] font-light text-white font-brandonLight">
           Showreel 2023
         </h2>
-        <div className="w-[80px] !h-[80px] grow-0">
+        <div
+          className="w-[80px] !h-[80px] grow-0"
+          onClick={() => toggleVideo(data.video)}
+        >
           <svg
             data-bbox="22.5 22.5 155 155"
             viewBox="0 0 200 200"
