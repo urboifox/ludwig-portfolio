@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ScrollTop } from "./";
 
-const Imprint = () => {
+const Imprint = ({ data }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -96,11 +97,11 @@ const Imprint = () => {
             Die verantwortliche Stelle für die Datenverarbeitung und den Inhalt
             auf dieser Website ist:
           </p>
-          <p className="within">Ludwig Reuter</p>
-          <p className="within">Danckelmannstraße 34</p>
-          <p className="within">14059 Berlin</p>
-          <p className="within">Telefon: +49 (0) 1577 1767470</p>
-          <p className="imprintP">E-Mail: contact@ludwigreuter.com</p>
+          <p className="within">{data.name}</p>
+          <p className="within">{data.address1}</p>
+          <p className="within">{data.address2}</p>
+          <p className="within">Telefon: {data.telefon}</p>
+          <p className="imprintP">E-Mail: {data.email}</p>
           <p className="imprintP">
             Verantwortliche Stelle ist die natürliche oder juristische Person,
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der
