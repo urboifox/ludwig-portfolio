@@ -5,14 +5,17 @@ import { Video } from "./";
 /* eslint-disable react/prop-types */
 function Projects({ data }) {
   const [video, setVideo] = useState(null);
+  const [videoText, setVideoText] = useState(null);
 
   const videoHolder = useRef();
 
-  const toggleVideo = (link) => {
+  const toggleVideo = (e) => {
     if (video !== null) {
       setVideo(null);
+      setVideoText(null);
     } else {
-      setVideo(link);
+      setVideo(e.video);
+      setVideoText(e.videoText);
     }
   };
 
@@ -46,7 +49,7 @@ function Projects({ data }) {
                 >
                   <Video link={video} embeded={e.embeded} />
                   <p className="text-[16px] mt-6 text-white font-brandonLight">
-                    {e.videoText}
+                    {videoText}
                   </p>
                 </div>
               </div>
@@ -60,11 +63,11 @@ function Projects({ data }) {
             />
             <div
               onClick={() => {
-                toggleVideo(e.video);
+                toggleVideo(e);
               }}
               className="absolute top-0 left-0 flex flex-col opacity-0 hover:opacity-100 transition-all duration-300 items-center justify-center bg-[rgba(0,0,0,0.8)] w-full h-full"
             >
-              <h2 className="text-[46px] text-center font-montserrat font-bold uppercase text-white">
+              <h2 className="text-[46px] leading-tight text-center font-montserrat font-bold uppercase text-white">
                 {e.name}
               </h2>
               <p className="text-[24] font-brandonLight text-white">
