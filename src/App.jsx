@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios("https://api.npoint.io/4acfc9dafe3470d0e7cb").then((res) =>
+    axios("https://api.npoint.io/f836015b58737570944c").then((res) =>
       setData(res.data)
     );
   }, []);

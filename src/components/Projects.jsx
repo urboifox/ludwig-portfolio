@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import { Video } from "./";
 
@@ -6,6 +6,7 @@ import { Video } from "./";
 function Projects({ data }) {
   const [video, setVideo] = useState(null);
   const [videoText, setVideoText] = useState(null);
+  const [image, setImage] = useState(null);
 
   const videoHolder = useRef();
 
@@ -13,19 +14,21 @@ function Projects({ data }) {
     if (video !== null) {
       setVideo(null);
       setVideoText(null);
+      setImage(null);
     } else {
       setVideo(e.video);
       setVideoText(e.videoText);
+      setImage(e.image);
     }
   };
 
-  useEffect(() => {
-    if (video) {
-      setTimeout(() => {
-        videoHolder.current.style.opacity = "1";
-      }, 200);
-    }
-  }, [video]);
+  // useEffect(() => {
+  //   if (video) {
+  //     setTimeout(() => {
+  //       videoHolder.current.style.opacity = "1";
+  //     }, 200);
+  //   }
+  // }, [video]);
 
   return (
     <section className="container paddingY border-b-primary border-b-[1px] max-w-[1000px] gridme mx-auto mt-10">
@@ -33,7 +36,7 @@ function Projects({ data }) {
         return (
           <div
             key={nanoid()}
-            className="overflow-hidden project relative cursor-pointer flex items-center justify-center"
+            className="overflow-hidden project group relative cursor-pointer flex items-center justify-center"
           >
             {video !== null ? (
               <div className="cursor-default w-full h-[100vh] bg-background z-20 flex items-center justify-center fixed left-0 top-0">
@@ -44,10 +47,10 @@ function Projects({ data }) {
                   }}
                 ></div>
                 <div
-                  className={`transition-all duration-500 opacity-0 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
+                  className={`transition-all duration-500 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
                   ref={videoHolder}
                 >
-                  <Video link={video} embeded={e.embeded} />
+                  <Video img={image} link={video} embeded={e.embeded} />
                   <p className="text-[16px] mt-6 text-white font-brandonLight">
                     {videoText}
                   </p>
@@ -57,7 +60,7 @@ function Projects({ data }) {
               ""
             )}
             <img
-              className="transition duration-300 object-contain"
+              className="transition  group-hover:scale-105 duration-300 object-contain"
               src={e.image}
               alt={e.name}
             />

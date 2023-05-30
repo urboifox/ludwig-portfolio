@@ -32,14 +32,6 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.project:hover img {
-  transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-}
-
 .xme::before,
 .xme::after {
   @apply content-[""] absolute transition-all duration-100 z-30 top-[50%] left-0 w-full h-[2px] bg-white;

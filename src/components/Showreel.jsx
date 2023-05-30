@@ -1,26 +1,29 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Video } from "./";
 
 function Showreel({ data }) {
   const [video, setVideo] = useState(null);
+  const [image, setImage] = useState(null);
 
-  const toggleVideo = (link) => {
+  const toggleVideo = (data) => {
     if (video === null) {
-      setVideo(link);
+      setVideo(data.video);
+      setImage(data.image);
     } else {
       setVideo(null);
+      setImage(null);
     }
   };
 
   const videoHolder = useRef();
-  useEffect(() => {
-    if (video) {
-      setTimeout(() => {
-        videoHolder.current.style.opacity = "1";
-      }, 200);
-    }
-  }, [video]);
+  // useEffect(() => {
+  //   if (video) {
+  //     setTimeout(() => {
+  //       videoHolder.current.style.opacity = "1";
+  //     }, 200);
+  //   }
+  // }, [video]);
 
   return (
     <section className="flex flex-col items-center justify-center mx-auto">
@@ -34,10 +37,10 @@ function Showreel({ data }) {
               }}
             ></div>
             <div
-              className={`transition-all duration-300 opacity-0 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
+              className={`transition-all duration-300 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
               ref={videoHolder}
             >
-              <Video link={video} embeded={data.embeded} />
+              <Video img={image} link={video} embeded={data.embeded} />
               <p className="text-[16px] mt-6 text-white font-brandonLight">
                 {data.videoText}
               </p>
@@ -53,7 +56,7 @@ function Showreel({ data }) {
         </h2>
         <div
           className="w-[80px] !h-[80px] grow-0"
-          onClick={() => toggleVideo(data.video)}
+          onClick={() => toggleVideo(data)}
         >
           <svg
             data-bbox="22.5 22.5 155 155"
