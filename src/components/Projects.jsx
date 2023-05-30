@@ -20,7 +20,7 @@ function Projects({ data }) {
     if (video) {
       setTimeout(() => {
         videoHolder.current.style.opacity = "1";
-      }, 500);
+      }, 200);
     }
   }, [video]);
 
@@ -45,6 +45,9 @@ function Projects({ data }) {
                   ref={videoHolder}
                 >
                   <Video link={video} embeded={e.embeded} />
+                  <p className="text-[16px] mt-6 text-white font-brandonLight">
+                    {e.videoText}
+                  </p>
                 </div>
               </div>
             ) : (

@@ -18,7 +18,7 @@ function Showreel({ data }) {
     if (video) {
       setTimeout(() => {
         videoHolder.current.style.opacity = "1";
-      }, 500);
+      }, 200);
     }
   }, [video]);
 
@@ -34,10 +34,13 @@ function Showreel({ data }) {
               }}
             ></div>
             <div
-              className={`transition-all duration-1000 opacity-0 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
+              className={`transition-all duration-300 opacity-0 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
               ref={videoHolder}
             >
               <Video link={video} embeded={data.embeded} />
+              <p className="text-[16px] mt-6 text-white font-brandonLight">
+                {data.videoText}
+              </p>
             </div>
           </div>
         </div>
