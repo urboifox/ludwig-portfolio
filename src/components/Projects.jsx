@@ -61,7 +61,7 @@ function Projects({ data }) {
               }}
               className="absolute top-0 left-0 flex flex-col opacity-0 hover:opacity-100 transition-all duration-300 items-center justify-center bg-[rgba(0,0,0,0.8)] w-full h-full"
             >
-              <h2 className="text-[46px] font-montserrat font-bold uppercase text-white">
+              <h2 className="text-[46px] text-center font-montserrat font-bold uppercase text-white">
                 {e.name}
               </h2>
               <p className="text-[24] font-brandonLight text-white">
