@@ -7,7 +7,6 @@ const Imprint = ({ data }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <section
       className="text-white text-[14px] mx-auto md:text-[30px] font-brandonLight font-light max-w-[1000px] px-0 md:px-20"

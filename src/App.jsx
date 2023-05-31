@@ -32,7 +32,7 @@ function App() {
               />
             }
           />
-          <Route path="/imprint" element={<Imprint data={data.imprint} />} />
+          <Route path=":imprint" element={<Imprint data={data.imprint} />} />
         </Routes>
         <Footer />
       </main>
