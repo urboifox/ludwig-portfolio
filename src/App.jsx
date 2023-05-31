@@ -23,7 +23,6 @@ function App() {
         <Routes>
           <Route
             path="/"
-            exact
             element={
               <Home
                 showreel={data.showreel}
