@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ScrollTop } from "./";
 
-const Imprint = ({ data }) => {
+const Imprint = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -96,11 +96,11 @@ const Imprint = ({ data }) => {
             Die verantwortliche Stelle für die Datenverarbeitung und den Inhalt
             auf dieser Website ist:
           </p>
-          <p className="within">{data.name}</p>
+          {/* <p className="within">{data.name}</p>
           <p className="within">{data.address1}</p>
           <p className="within">{data.address2}</p>
           <p className="within">Telefon: {data.telefon}</p>
-          <p className="imprintP">E-Mail: {data.email}</p>
+          <p className="imprintP">E-Mail: {data.email}</p> */}
           <p className="imprintP">
             Verantwortliche Stelle ist die natürliche oder juristische Person,
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der
