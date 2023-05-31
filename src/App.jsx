@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState(null);
-
+  // https://api.npoint.io/f836015b58737570944c (testing)
+  // https://api.npoint.io/4acfc9dafe3470d0e7cb (official)
   useEffect(() => {
     axios("https://api.npoint.io/4acfc9dafe3470d0e7cb").then((res) =>
       setData(res.data)
