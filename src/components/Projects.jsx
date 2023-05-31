@@ -41,19 +41,19 @@ function Projects({ data }) {
             {video !== null ? (
               <div className="cursor-default w-full h-[100vh] bg-background z-20 flex items-center justify-center fixed left-0 top-0">
                 <div
-                  className="w-[50px] cursor-pointer xme aspect-square absolute top-10 right-[10px] md:right-10"
+                  className="w-[50px] cursor-pointer z-50 xme aspect-square absolute top-10 right-[10px] md:right-10"
                   onClick={() => {
                     toggleVideo(null);
                   }}
                 ></div>
                 <div
-                  className={`transition-all duration-500 w-[95%] aspect-video md:w-p[80%] lg:w-[60%]`}
+                  className={`transition-all duration-500 w-[95%] sm:w-[80%] lg:w-[60%]`}
                   ref={videoHolder}
                 >
                   <Video img={image} link={video} embeded={e.embeded} />
-                  <p className="text-[16px] mt-6 text-white font-brandonLight">
+                  <pre className="text-[16px] mt-6 text-white font-brandonLight">
                     {videoText}
-                  </p>
+                  </pre>
                 </div>
               </div>
             ) : (
@@ -73,9 +73,9 @@ function Projects({ data }) {
               <h2 className="text-[46px] leading-tight text-center font-montserrat font-bold uppercase text-white">
                 {e.name}
               </h2>
-              <p className="text-[24] font-brandonLight text-white">
+              <pre className="text-[24] font-brandonLight text-white">
                 {e.description}
-              </p>
+              </pre>
             </div>
           </div>
         );

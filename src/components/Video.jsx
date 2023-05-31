@@ -3,9 +3,9 @@ const Video = ({ img, link, embeded }) => {
   return (
     <>
       {link === "" ? (
-        <div className="w-full relative max-w-full h-full !hover:scale-[1]">
+        <div className="w-full aspect-auto relative max-w-full h-full !hover:scale-[1]">
           <img
-            className="w-full max-w-full h-full !hover:scale-[1]"
+            className="object-cover w-full max-w-full h-full !hover:scale-[1]"
             src={img}
             alt="placeholer"
           />
@@ -14,7 +14,7 @@ const Video = ({ img, link, embeded }) => {
           </div>
         </div>
       ) : (
-        <>
+        <div className="aspect-video">
           {embeded ? (
             <iframe
               className="w-full max-w-full h-full"
@@ -32,7 +32,7 @@ const Video = ({ img, link, embeded }) => {
               className="w-full h-full max-w-full"
             ></video>
           )}
-        </>
+        </div>
       )}
     </>
   );
