@@ -9,6 +9,8 @@ portfolio website for client using react
 - CSS grid
 - Semantic html elements
 
-## Author
+## Links
 
-[Mohamed](https://mohamed-dev.netlify.app)
+Live: [ludwig-portfolio.netlify.app](https://ludwig-portfolio.netlify.app/)
+
+Author: [Mohamed](https://mohamed-dev.netlify.app)
